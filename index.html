@@ -4,44 +4,55 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student Hostel Admission</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <!-- Linking external CSS file -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Header with hero section -->
   <header>
-    <h1>Welcome to ST. Francis Girls Hostel</h1>
-    <p>Comfortable and Affordable Hostel for Students</p>
+    <h1><i class="fa-solid fa-house-chimney"></i> ST. Francis Girls Hostel</h1>
+    <p>Comfortable • Affordable • Safe</p>
   </header>
 
+  <!-- Navigation -->
   <nav>
-    <a href="#home">Home</a>
-    <a href="#admission">Admission</a>
-    <a href="#contact">Contact</a>
+    <a href="#home"><i class="fa-solid fa-home"></i> Home</a>
+    <a href="#admission"><i class="fa-solid fa-file-pen"></i> Admission</a>
+    <a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
   </nav>
 
+  <!-- About Section -->
   <div class="container" id="home">
     <h2>About Our Hostel</h2>
     <p>
-      Sunshine Hostel provides students with safe, affordable, and comfortable
-      living spaces. Our facilities include Wi-Fi, study rooms, healthy food,
-      and 24/7 security.
+      Sunshine Hostel provides students with <strong>safe, affordable, and comfortable</strong>
+      living spaces. Our facilities include:
     </p>
+    <ul>
+      <li><i class="fa-solid fa-wifi"></i> Free Wi-Fi</li>
+      <li><i class="fa-solid fa-book-open"></i> Study Rooms</li>
+      <li><i class="fa-solid fa-utensils"></i> Healthy Food</li>
+      <li><i class="fa-solid fa-shield-halved"></i> 24/7 Security</li>
+    </ul>
   </div>
 
+  <!-- Admission Form -->
   <div class="container" id="admission">
     <h2>Hostel Admission Form</h2>
     <form id="admissionForm">
       <label for="name">Full Name:</label>
-      <input type="text" id="name" required>
+      <input type="text" id="name" placeholder="Enter your full name" required>
 
       <label for="email">Email:</label>
-      <input type="email" id="email" required>
+      <input type="email" id="email" placeholder="example@mail.com" required>
 
       <label for="phone">Phone Number:</label>
       <input type="tel" id="phone" pattern="[0-9]{10}" placeholder="10-digit number" required>
 
       <label for="course">Course:</label>
-      <input type="text" id="course" required>
+      <input type="text" id="course" placeholder="e.g., B.Sc Computer Science" required>
 
       <label for="room">Room Type:</label>
       <select id="room" required>
@@ -52,29 +63,39 @@
       </select>
 
       <label for="address">Address:</label>
-      <textarea id="address" rows="3" required></textarea>
+      <textarea id="address" rows="3" placeholder="Your permanent address" required></textarea>
 
-      <button type="submit">Submit Application</button>
+      <button type="submit"><i class="fa-solid fa-paper-plane"></i> Submit Application</button>
     </form>
     <p id="successMessage" class="success">✔ Application Submitted Successfully!</p>
   </div>
 
+  <!-- Contact Section -->
   <div class="container" id="contact">
     <h2>Contact Us</h2>
-    <p>Email: info@st.francisgirlshostel.com | Phone: +91-9876543210</p>
+    <p><i class="fa-solid fa-envelope"></i> Email: info@st.francisgirlshostel.com</p>
+    <p><i class="fa-solid fa-phone"></i> Phone: +91-9876543210</p>
   </div>
 
+  <!-- Footer -->
   <footer>
-    <p>© 2025 Sunshine Hostel. All rights reserved.</p>
+    <p>© <span id="year"></span> Sunshine Hostel. All rights reserved.</p>
   </footer>
 
   <!-- JavaScript -->
   <script>
+    // Success message animation
     document.getElementById("admissionForm").addEventListener("submit", function(e){
       e.preventDefault();
-      document.getElementById("successMessage").style.display = "block";
+      let successMsg = document.getElementById("successMessage");
+      successMsg.style.display = "block";
+      successMsg.style.opacity = "0";
+      setTimeout(() => { successMsg.style.opacity = "1"; }, 100);
       this.reset();
     });
+
+    // Auto-update footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
