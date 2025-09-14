@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Hostel Admission</title>
+  <!-- Linking external CSS file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Welcome to ST. Francis Girls Hostel</h1>
+    <p>Comfortable and Affordable Hostel for Students</p>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#admission">Admission</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="container" id="home">
+    <h2>About Our Hostel</h2>
+    <p>
+      Sunshine Hostel provides students with safe, affordable, and comfortable
+      living spaces. Our facilities include Wi-Fi, study rooms, healthy food,
+      and 24/7 security.
+    </p>
+  </div>
+
+  <div class="container" id="admission">
+    <h2>Hostel Admission Form</h2>
+    <form id="admissionForm">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" pattern="[0-9]{10}" placeholder="10-digit number" required>
+
+      <label for="course">Course:</label>
+      <input type="text" id="course" required>
+
+      <label for="room">Room Type:</label>
+      <select id="room" required>
+        <option value="">--Select--</option>
+        <option value="Single">Single Room</option>
+        <option value="Double">Double Sharing</option>
+        <option value="Triple">Triple Sharing</option>
+      </select>
+
+      <label for="address">Address:</label>
+      <textarea id="address" rows="3" required></textarea>
+
+      <button type="submit">Submit Application</button>
+    </form>
+    <p id="successMessage" class="success">✔ Application Submitted Successfully!</p>
+  </div>
+
+  <div class="container" id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: info@st.francisgirlshostel.com | Phone: +91-9876543210</p>
+  </div>
+
+  <footer>
+    <p>© 2025 Sunshine Hostel. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    document.getElementById("admissionForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      document.getElementById("successMessage").style.display = "block";
+      this.reset();
+    });
+  </script>
+</body>
+</html>
