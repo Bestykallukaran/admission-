@@ -10,10 +10,13 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header with hero section -->
+  <!-- Header / Hero Section -->
   <header>
-    <h1><i class="fa-solid fa-house-chimney"></i> ST. Francis Girls Hostel</h1>
-    <p>Comfortable • Affordable • Safe</p>
+    <div class="hero-overlay">
+      <h1><i class="fa-solid fa-building-columns"></i> ST. Francis Girls Hostel</h1>
+      <p>Comfortable • Affordable • Safe</p>
+      <a href="#admission" class="hero-btn"><i class="fa-solid fa-file-pen"></i> Apply Now</a>
+    </div>
   </header>
 
   <!-- Navigation -->
@@ -30,40 +33,52 @@
       Sunshine Hostel provides students with <strong>safe, affordable, and comfortable</strong>
       living spaces. Our facilities include:
     </p>
-    <ul>
-      <li><i class="fa-solid fa-wifi"></i> Free Wi-Fi</li>
-      <li><i class="fa-solid fa-book-open"></i> Study Rooms</li>
-      <li><i class="fa-solid fa-utensils"></i> Healthy Food</li>
-      <li><i class="fa-solid fa-shield-halved"></i> 24/7 Security</li>
-    </ul>
+    <div class="features">
+      <div class="card"><i class="fa-solid fa-wifi"></i><p>Free Wi-Fi</p></div>
+      <div class="card"><i class="fa-solid fa-book-open"></i><p>Study Rooms</p></div>
+      <div class="card"><i class="fa-solid fa-utensils"></i><p>Healthy Food</p></div>
+      <div class="card"><i class="fa-solid fa-shield-halved"></i><p>24/7 Security</p></div>
+    </div>
   </div>
 
   <!-- Admission Form -->
   <div class="container" id="admission">
     <h2>Hostel Admission Form</h2>
     <form id="admissionForm">
-      <label for="name">Full Name:</label>
-      <input type="text" id="name" placeholder="Enter your full name" required>
+      <div class="form-group">
+        <input type="text" id="name" required>
+        <label for="name">Full Name</label>
+      </div>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" placeholder="example@mail.com" required>
+      <div class="form-group">
+        <input type="email" id="email" required>
+        <label for="email">Email</label>
+      </div>
 
-      <label for="phone">Phone Number:</label>
-      <input type="tel" id="phone" pattern="[0-9]{10}" placeholder="10-digit number" required>
+      <div class="form-group">
+        <input type="tel" id="phone" pattern="[0-9]{10}" required>
+        <label for="phone">Phone Number</label>
+      </div>
 
-      <label for="course">Course:</label>
-      <input type="text" id="course" placeholder="e.g., B.Sc Computer Science" required>
+      <div class="form-group">
+        <input type="text" id="course" required>
+        <label for="course">Course</label>
+      </div>
 
-      <label for="room">Room Type:</label>
-      <select id="room" required>
-        <option value="">--Select--</option>
-        <option value="Single">Single Room</option>
-        <option value="Double">Double Sharing</option>
-        <option value="Triple">Triple Sharing</option>
-      </select>
+      <div class="form-group">
+        <select id="room" required>
+          <option value=""></option>
+          <option value="Single">Single Room</option>
+          <option value="Double">Double Sharing</option>
+          <option value="Triple">Triple Sharing</option>
+        </select>
+        <label for="room">Room Type</label>
+      </div>
 
-      <label for="address">Address:</label>
-      <textarea id="address" rows="3" placeholder="Your permanent address" required></textarea>
+      <div class="form-group">
+        <textarea id="address" rows="3" required></textarea>
+        <label for="address">Address</label>
+      </div>
 
       <button type="submit"><i class="fa-solid fa-paper-plane"></i> Submit Application</button>
     </form>
@@ -83,19 +98,6 @@
   </footer>
 
   <!-- JavaScript -->
-  <script>
-    // Success message animation
-    document.getElementById("admissionForm").addEventListener("submit", function(e){
-      e.preventDefault();
-      let successMsg = document.getElementById("successMessage");
-      successMsg.style.display = "block";
-      successMsg.style.opacity = "0";
-      setTimeout(() => { successMsg.style.opacity = "1"; }, 100);
-      this.reset();
-    });
-
-    // Auto-update footer year
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
